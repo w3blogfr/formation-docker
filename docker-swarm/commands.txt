@@ -1,0 +1,28 @@
+sudo docker swarm init
+
+
+sudo docker swarm join --token SWMTKN-1-1nptvvdmhn4o2b01whodd5re2yn0bfvkgufbdqktrri77g8q8k-70tqvvr82va9apavcn9yaia5q 51.79.30.136:2377
+
+
+docker node ls
+
+docker node ps <node> 
+docker node inspect  <node>
+
+docker node promote <node>
+docker node demote <node>
+
+sudo docker node rm <node>
+
+sudo docker node update --availability drain <node>
+sudo docker node update --availability active <node>
+
+sudo docker leave
+
+
+docker stack deploy --compose-file 
+
+
+sudo docker stack deploy --compose-file docker-compose-3-load-balancing.yml demo
+
+sudo docker stack services demo

@@ -1,0 +1,12 @@
+version: '3'
+services:
+ whoami:
+  image: containous/whoami
+  deploy:
+   replicas: 3
+  ports:
+   - "80:80"
+  labels:
+   - "traefik.enable=true"
+   - "traefik.http.routers.whoami.rule=Host(`whoami.remote`)"
+   - "traefik.http.routers.whoami.entrypoints=whoami"
