@@ -1,0 +1,4 @@
+
+
+Replace text myVariableToReplace with variable ${tag} dans le fichier..
+sed -i -e 's/myVariableToReplace/${tag}/g' ./src/environments/environment.integration.ts

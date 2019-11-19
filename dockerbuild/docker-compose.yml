@@ -1,0 +1,12 @@
+version: '3'
+services:
+  tomcat:
+   image: "mytomcat:${TOMCAT_VERSION}"
+   env_file:
+    - .env
+   ports:
+     - "${MY_PORT}:8080"
+   build: 
+    context: ./tomcat-context
+    args:                                                                      
+      - TOMCAT_VERSION=${TOMCAT_VERSION}
