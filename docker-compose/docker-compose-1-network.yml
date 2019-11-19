@@ -1,0 +1,25 @@
+version: '3'
+services:
+ whoami:
+  image: containous/whoami
+  ports:
+   - 80
+  networks:
+   - myNetwork
+ myApp:
+  image: arunvelsriram/utils
+  command: "tail -f /dev/null"
+  networks:
+   - myNetwork
+   - autre
+ myOtherApp:
+  image: arunvelsriram/utils
+  command: "tail -f /dev/null"
+  networks:
+   - autre
+   
+networks:
+ myNetwork:
+  driver: bridge
+ autre:
+  driver: bridge
