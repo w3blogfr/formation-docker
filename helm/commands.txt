@@ -1,0 +1,1 @@
+kubectl get secret --namespace default redmine2 -o jsonpath="{.data.redmine-password}" | base64 --decode
