@@ -1,0 +1,41 @@
+
+
+kubectl get namespace
+
+
+kubectl apply -f deployment.yaml
+kubectl delete -f deployment.yaml
+
+kubectl get pods
+kubectl get pods --all-namespaces
+
+#get logs
+kubectl logs my-pod
+kubectl logs my-pod my-container
+
+# Affiche le YAML du Pod
+kubectl get pod my-pod -o yaml      
+
+# Aller dans un container
+k exec -ti my-pod -c my-container /bin/bash     
+
+#List les containers dans un pod
+kubectl get pods POD_NAME_HERE -o jsonpath='{.spec.containers[*].name}'
+
+kubectl get pods -l k8s-app=deployment-example -o jsonpath={.items[*].spec.containers[*].name}
+
+#Forwarder un port d'un container
+k port-forward --namespace=whoami whoami-deployment-5c8d94f78-5z8gz 18000:80
+
+------------ Cluster remote ------------------
+
+export KUBECONFIG
+
+$env:KUBECONFIG="C:\dev\test-kubernetes\kubeconfig.yml"
+
+
+kubectl config view
+
+
+
+https://kubernetes.io/fr/docs/reference/kubectl/cheatsheet/

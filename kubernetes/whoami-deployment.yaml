@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata: # ici les metadata lié au Deployment 
+  # Nom de l’objet, il doit être unique dans le namespace
+  name: whoami-deployment
+  namespace: whoami
+spec: # Ici les spécifications du Deployment
+ # Lance 3 Pods 
+ replicas: 3
+ selector:
+  matchLabels:
+   app: whoami
+ template:
+  metadata: # ici les metadata lié aux Pods (ne pas confondre avec les précédents) 
+   labels:
+    app: whoami
+  spec: # Ici les spécifications des Pods
+   containers: # un Pod peut contenir plusieurs conteneurs
+   - name: whoami
+     image: containous/whoami
