@@ -1,7 +1,7 @@
 version: '3'
 services:
  ubuntu:
-  image: "ubuntu"
+  image: "arunvelsriram/utils"
   command:
    - "--api.insecure=true"
    - "--providers.docker=true"
