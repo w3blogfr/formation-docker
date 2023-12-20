@@ -1,0 +1,12 @@
+version : '3'
+
+services:
+    php:
+        build: .
+        image: ${CI_REGISTRY_IMAGE}/demo
+        volumes: 
+             - ./html:/var/www/html
+        environment:
+             - BUILD_VERSION="1.4"
+        ports:
+             - 8080:80

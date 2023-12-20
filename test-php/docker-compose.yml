@@ -1,0 +1,11 @@
+version : '3'
+
+services:
+    php:
+        image: registry.gitlab.com/w3blogfr/demo-gitlab-docker
+        volumes: 
+             - ./html:/var/www/html
+        environment:
+             - MY_VARIABLE="Bonjour à tous"
+        ports:
+             - 8080:80
