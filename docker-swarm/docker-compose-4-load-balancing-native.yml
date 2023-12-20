@@ -2,11 +2,7 @@ version: '3'
 services:
  ubuntu:
   image: "arunvelsriram/utils"
-  command:
-   - "--api.insecure=true"
-   - "--providers.docker=true"
-   - "--providers.docker.exposedbydefault=false"
-   - "--entrypoints.web.address=:80"
+  command: "tail -f /dev/null"
   ports:
    - "80:80"
    - "8080:8080"

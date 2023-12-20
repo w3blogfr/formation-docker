@@ -3,7 +3,7 @@ services:
  whoami:
   image: containous/whoami
   ports:
-   - 80
+   - 30000:80
   networks:
    - myNetwork
  myApp:
